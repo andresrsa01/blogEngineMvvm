@@ -8,7 +8,7 @@ using BlogEngine.Model;
 
 namespace BlogEngine.DataAccess
 {
-    public class BlogEngineContext : DbContext
+    public class BlogEngineContext : DbContext, IDisposable
     {
         public BlogEngineContext() : base("name=BlogEngineContext")
         {
@@ -24,5 +24,10 @@ namespace BlogEngine.DataAccess
         public DbSet<Publication> Publications { get; set; }
 
         public DbSet<User> Users { get; set; }
+
+        public void Dispose()
+        {
+           
+        }
     }
 }
