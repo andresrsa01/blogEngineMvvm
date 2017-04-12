@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.DataAccess\BlogEngine.DataAccess.csproj">
+      <Project>{820BA7EE-9B51-4CD0-8BE6-0B75A4EEAB35}</Project>
+      <Name>BlogEngine.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlogEngine.Model\BlogEngine.Model.csproj">
       <Project>{8BC16BF3-FFA8-45D1-B3D1-81C8AB03D527}</Project>
       <Name>BlogEngine.Model</Name>
