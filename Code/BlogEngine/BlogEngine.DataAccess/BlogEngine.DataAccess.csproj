@@ -59,6 +59,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Repository\IDABlog.cs" />
+    <Compile Include="Repository\IDAPublication.cs" />
+    <Compile Include="Repository\IDAUser.cs" />
+    <Compile Include="Source\DABlog.cs" />
+    <Compile Include="Source\DAPublication.cs" />
+    <Compile Include="Source\DAUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,11 +8,11 @@ using BlogEngine.Model;
 
 namespace BlogEngine.DataAccess
 {
-    public class BlogEngineContext : DbContext, IDisposable
+    public class BlogEngineContext : DbContext
     {
         public BlogEngineContext() : base("name=BlogEngineContext")
         {
-
+           // Configuration.ProxyCreationEnabled = false;
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -25,9 +25,5 @@ namespace BlogEngine.DataAccess
 
         public DbSet<User> Users { get; set; }
 
-        public void Dispose()
-        {
-           
-        }
     }
 }

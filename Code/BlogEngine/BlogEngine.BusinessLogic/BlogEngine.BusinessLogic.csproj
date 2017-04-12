@@ -40,7 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLBlog.cs" />
+    <Compile Include="BLPublication.cs" />
+    <Compile Include="BLUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Model\BlogEngine.Model.csproj">
+      <Project>{8BC16BF3-FFA8-45D1-B3D1-81C8AB03D527}</Project>
+      <Name>BlogEngine.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
