@@ -1,4 +1,4 @@
-﻿<Window x:Class="BlogEngine.View.MainWindow"
+﻿<RibbonWindow x:Class="BlogEngine.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:BlogEngine.View"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
-</Window>
+    <DockPanel>
+        <Ribbon DockPanel.Dock="Top" VerticalAlignment="Top">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu Visibility="Collapsed">
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+            <RibbonTab Header="Blog">
+                <RibbonGroup Header="Acciones">
+                    <RibbonButton LargeImageSource="Image/blog-icon.png" Label="Create"></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blogs-icon.png" Label="Create"></RibbonButton>
+                </RibbonGroup>
+                <RibbonGroup Header="Reportes">
+                    <RibbonButton LargeImageSource="Image/report-icon.png" Label="Registrados" Command="{Binding ReporteBlogCommand}" ></RibbonButton>
+                </RibbonGroup>
+            </RibbonTab>
+            <RibbonTab Header="Publicaciones"  >
+                <RibbonGroup Header="Mantenimiento">
+                    <RibbonButton LargeImageSource="Image/blog-post-accept-icon.png" Label="Crear" Command="{Binding CrearPublicacionCommand}" ></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blog-post-icon.png" Label="Listar" Command="{Binding ListadoPublicacionCommand}" ></RibbonButton>
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" ></Frame>
+    </DockPanel>
+</RibbonWindow>
