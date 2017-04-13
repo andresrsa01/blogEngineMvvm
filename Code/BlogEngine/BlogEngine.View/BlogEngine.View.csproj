@@ -124,5 +124,11 @@
     <Resource Include="Image\Button-Refresh-icon.png" />
     <Resource Include="Image\report-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Resource\BlogEngine.Resource.csproj">
+      <Project>{610a0162-048c-460b-84c9-18cf192b75f9}</Project>
+      <Name>BlogEngine.Resource</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

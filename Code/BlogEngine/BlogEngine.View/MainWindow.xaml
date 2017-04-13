@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BlogEngine.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="492.704" Width="583.584">
     <DockPanel>
         <Ribbon DockPanel.Dock="Top" VerticalAlignment="Top">
             <Ribbon.ApplicationMenu>
@@ -28,6 +28,7 @@
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
+        <!--Utilizado para navegar entre nuestras paginas-->
         <Frame Name="MainFrame" NavigationUIVisibility="Hidden" ></Frame>
     </DockPanel>
 </RibbonWindow>

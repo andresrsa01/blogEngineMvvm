@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:BlogEngine.View"
              StartupUri="Login.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="pack://application:,,,/BlogEngine.Resource;component/Theme/BureauBlue.xaml"></ResourceDictionary>
     </Application.Resources>
 </Application>
