@@ -14,8 +14,8 @@
             </Ribbon.ApplicationMenu>
             <RibbonTab Header="Blog">
                 <RibbonGroup Header="Acciones">
-                    <RibbonButton LargeImageSource="Image/blog-icon.png" Label="Create"></RibbonButton>
-                    <RibbonButton LargeImageSource="Image/blogs-icon.png" Label="Create"></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blog-icon.png" Label="Create" Command="{Binding CreateBlogCommand}"></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blogs-icon.png" Label="List" Command="{Binding ListBlogCommand}"></RibbonButton>
                 </RibbonGroup>
                 <RibbonGroup Header="Reportes">
                     <RibbonButton LargeImageSource="Image/report-icon.png" Label="Registrados" Command="{Binding ReporteBlogCommand}" ></RibbonButton>
@@ -29,6 +29,6 @@
             </RibbonTab>
         </Ribbon>
         <!--Utilizado para navegar entre nuestras paginas-->
-        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" ></Frame>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden" Source="{Binding Page}"></Frame>
     </DockPanel>
 </RibbonWindow>

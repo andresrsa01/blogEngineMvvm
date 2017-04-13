@@ -89,6 +89,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,6 +126,10 @@
     <Resource Include="Image\report-icon.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">
+      <Project>{2A9B0F88-0337-4768-954B-30C1B439B4C3}</Project>
+      <Name>BlogEngine.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlogEngine.Resource\BlogEngine.Resource.csproj">
       <Project>{610a0162-048c-460b-84c9-18cf192b75f9}</Project>
       <Name>BlogEngine.Resource</Name>

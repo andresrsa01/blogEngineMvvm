@@ -17,6 +17,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -26,7 +27,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="4"
+        <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="4"
           AutoGenerateColumns="True" SelectionMode="Single"/>
     </Grid>
 </Page>
