@@ -13,5 +13,26 @@ namespace BlogEngine.View
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            base.OnStartup(e);
+#if DEBUG
+            try
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+#else
+            Login login = new Login();
+            login.Show();
+#endif
+        }
     }
 }
