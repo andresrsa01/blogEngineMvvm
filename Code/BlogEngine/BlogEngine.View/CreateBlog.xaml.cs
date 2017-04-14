@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BlogEngine.ViewModel;
 
 namespace BlogEngine.View
 {
@@ -20,9 +21,11 @@ namespace BlogEngine.View
     /// </summary>
     public partial class CreateBlog : Page
     {
+        public CreateBlogViewModel vm = new CreateBlogViewModel();
         public CreateBlog()
         {
             InitializeComponent();
+            DataContext = vm;
         }
     }
 }

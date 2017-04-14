@@ -8,7 +8,7 @@ using BlogEngine.Model;
 
 namespace BlogEngine.BusinessLogic
 {
-    public class BLBlog
+    public class BLBlog : IDisposable
     {
         private readonly DABlog _da = new DABlog();
 

@@ -40,13 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateBlogViewModel.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.BusinessLogic\BlogEngine.BusinessLogic.csproj">
+      <Project>{1B8C63F2-6803-4256-9E84-72AE6EC812A4}</Project>
+      <Name>BlogEngine.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">
       <Project>{2A9B0F88-0337-4768-954B-30C1B439B4C3}</Project>
       <Name>BlogEngine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.Model\BlogEngine.Model.csproj">
+      <Project>{8BC16BF3-FFA8-45D1-B3D1-81C8AB03D527}</Project>
+      <Name>BlogEngine.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
