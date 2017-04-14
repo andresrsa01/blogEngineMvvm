@@ -28,6 +28,6 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid IsReadOnly="True" ColumnWidth="*" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="6" Grid.RowSpan="4"
-          AutoGenerateColumns="True" SelectionMode="Single"/>
+          AutoGenerateColumns="True" SelectionMode="Single" ItemsSource="{Binding ListBlogs}"/>
     </Grid>
 </Page>
