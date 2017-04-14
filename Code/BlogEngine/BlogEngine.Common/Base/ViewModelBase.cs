@@ -40,12 +40,9 @@ namespace BlogEngine.Common.Base
             GC.SuppressFinalize(this);
         }
 
-        public string this[string columnName]
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public string this[string columnName] => OnValidate(columnName);
 
-        public string Error { get; }
+        public string Error => null;
 
         protected virtual string OnValidate(string propertyName)
         {

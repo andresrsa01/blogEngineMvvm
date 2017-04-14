@@ -7,44 +7,97 @@
 	  mc:Ignorable="d" 
 	  d:DesignHeight="300" d:DesignWidth="450"
 	  Title="Create Publication">
+    <Page.Resources>
+        <ControlTemplate x:Key="ErrorToolTipTemplate">
+            <ControlTemplate.Resources>
+                <Style x:Key="TextblockErrorToolTip" TargetType="TextBlock">
+                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Margin" Value="10 0 10 0" />
+                </Style>
+            </ControlTemplate.Resources>
+            <DockPanel LastChildFill="True">
+                <Border Height="Auto" 
+                        Margin="5,0,0,0" 
+                        Background="#DC000C" 
+                        CornerRadius="3" 
+                        DockPanel.Dock="Right">
+                    <TextBlock
+                                Text="{Binding ElementName=customAdorner, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}">
+                        <TextBlock.Style>
+                            <StaticResource ResourceKey="TextblockErrorToolTip" />
+                        </TextBlock.Style>
+                    </TextBlock>
+                </Border>
+                <AdornedElementPlaceholder Name="customAdorner">
+                    <Border BorderBrush="#DC000C" BorderThickness="1.3" />
+                </AdornedElementPlaceholder>
+            </DockPanel>
 
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-			<ColumnDefinition></ColumnDefinition>
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition></RowDefinition>
-			<RowDefinition></RowDefinition>
-			<RowDefinition></RowDefinition>
-			<RowDefinition></RowDefinition>
-			<RowDefinition></RowDefinition>
-		</Grid.RowDefinitions>
-		<ComboBox x:Name="BlogComboBox" SelectedValuePath="BlogId" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Height="25"
-                  ItemsSource="{Binding ListBlogs}" SelectedItem="{Binding BlogSelected}">
-			<ComboBox.ItemTemplate>
-				<DataTemplate>
-					<StackPanel Orientation="Horizontal">
-						<TextBlock Text="{Binding Name}" />
-					</StackPanel>
-				</DataTemplate>
-			</ComboBox.ItemTemplate>
-		</ComboBox>
+        </ControlTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ComboBox Validation.ErrorTemplate="{DynamicResource ErrorToolTipTemplate}"  x:Name="BlogComboBox" SelectedValuePath="BlogId" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" Height="25"
+                  ItemsSource="{Binding ListBlogs}" SelectedItem="{Binding BlogSelected, ValidatesOnDataErrors=True}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
-		<TextBox  x:Name="TituloTextBox"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Height="25" 
-                  Text="{Binding PublicacionTitulo,UpdateSourceTrigger=PropertyChanged}" >
-		</TextBox>
-		<TextBox  x:Name="ContenidoTextBox" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4"
-                  Text="{Binding PublicacionContenido, UpdateSourceTrigger=PropertyChanged}" >
-		</TextBox>
-		<Label Content="Blog" Grid.Column="0" Grid.Row="0" Height="25"></Label>
-		<Label Content="Titulo" Grid.Column="0" Grid.Row="1" Height="25"></Label>
-		<Label Content="Cuerpo" Grid.Column="0" Grid.Row="2" VerticalContentAlignment="Center"></Label>
-		<Button Grid.Column="1" Grid.Row="3" Height="35" Grid.ColumnSpan="3" VerticalAlignment="Bottom" Content="Crear Publicaion" Command="{Binding CreatePublicationCommand}"></Button>
-	</Grid>
+        <TextBox Validation.ErrorTemplate="{DynamicResource ErrorToolTipTemplate}"  x:Name="TitleTextBox"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Height="25" 
+                  Text="{Binding PublicationTitle,UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{DynamicResource ErrorToolTipTemplate}"  x:Name="ContentTextBox" TextWrapping="Wrap" AcceptsReturn="True" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4"
+                  Text="{Binding PublicationContent, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}">
+        </TextBox>
+        <Label Content="Blog" Grid.Column="0" Grid.Row="0" Height="25" HorizontalAlignment="Center"></Label>
+        <Label Content="Titulo" Grid.Column="0" Grid.Row="1" Height="25" HorizontalAlignment="Center"></Label>
+        <Label Content="Cuerpo" Grid.Column="0" Grid.Row="2" VerticalContentAlignment="Center" HorizontalAlignment="Center"></Label>
+        <Button 
+            Grid.Column="1"
+            Grid.Row="3" 
+            Height="35" 
+            Grid.ColumnSpan="3"
+            VerticalAlignment="Bottom"
+            Content="Create Publication"
+            Command="{Binding CreatePublicationCommand}">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="IsEnabled" Value="False"/>
+                    <Style.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=TitleTextBox, Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=ContentTextBox, Path=(Validation.HasError)}" Value="false"></Condition>
+                                <Condition Binding="{Binding ElementName=BlogComboBox, Path=(Validation.HasError)}" Value="false"></Condition>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsEnabled" Value="True"></Setter>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
 </Page>
