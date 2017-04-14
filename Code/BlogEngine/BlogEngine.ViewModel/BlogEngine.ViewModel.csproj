@@ -45,6 +45,7 @@
     <Compile Include="CreateBlogViewModel.cs" />
     <Compile Include="CreatePublicationViewModel.cs" />
     <Compile Include="ListBlogViewModel.cs" />
+    <Compile Include="ListPublicationViewModel.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

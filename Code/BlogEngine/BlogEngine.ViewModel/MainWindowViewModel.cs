@@ -102,7 +102,7 @@ namespace BlogEngine.ViewModel
 
         private void OpenListPublications()
         {
-            Page = "ReportPublication.xaml";
+            Page = "ListPublication.xaml";
         }
 
     }

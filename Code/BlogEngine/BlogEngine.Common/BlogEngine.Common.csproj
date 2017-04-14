@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -44,9 +45,15 @@
   <ItemGroup>
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Converter\SearchPublicationConverter.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BlogEngine.Model\BlogEngine.Model.csproj">
+      <Project>{8BC16BF3-FFA8-45D1-B3D1-81C8AB03D527}</Project>
+      <Name>BlogEngine.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
