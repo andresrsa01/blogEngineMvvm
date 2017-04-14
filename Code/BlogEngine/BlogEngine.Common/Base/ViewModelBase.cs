@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -9,7 +11,7 @@ using BlogEngine.Common.Annotations;
 
 namespace BlogEngine.Common.Base
 {
-    public class ViewModelBase : INotifyPropertyChanged, IDisposable
+    public class ViewModelBase : INotifyPropertyChanged, IDisposable, IDataErrorInfo
     {
 
         #region INotifyPropertyChanged
@@ -38,5 +40,23 @@ namespace BlogEngine.Common.Base
             GC.SuppressFinalize(this);
         }
 
+        public string this[string columnName]
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public string Error { get; }
+
+        protected virtual string OnValidate(string propertyName)
+        {
+            var context = new ValidationContext(this, null, null)
+            {
+                MemberName = propertyName
+            };
+            var results = new Collection<ValidationResult>();
+            var isValid = Validator.TryValidateProperty(this.GetType().GetProperty(propertyName).GetValue(this),
+                context, results);
+            return !isValid ? results[0].ErrorMessage : null;
+        }
     }
 }

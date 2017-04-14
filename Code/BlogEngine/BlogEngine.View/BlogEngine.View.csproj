@@ -65,6 +65,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CreatePublication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ListBlogs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,9 @@
     </Compile>
     <Compile Include="CreateBlog.xaml.cs">
       <DependentUpon>CreateBlog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreatePublication.xaml.cs">
+      <DependentUpon>CreatePublication.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListBlogs.xaml.cs">
       <DependentUpon>ListBlogs.xaml</DependentUpon>
