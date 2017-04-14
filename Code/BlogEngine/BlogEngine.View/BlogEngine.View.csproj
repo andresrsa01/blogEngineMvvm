@@ -134,6 +134,10 @@
       <Project>{610a0162-048c-460b-84c9-18cf192b75f9}</Project>
       <Name>BlogEngine.Resource</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.ViewModel\BlogEngine.ViewModel.csproj">
+      <Project>{03a8708b-b932-4741-ae36-15a07603341f}</Project>
+      <Name>BlogEngine.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

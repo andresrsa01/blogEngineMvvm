@@ -16,7 +16,6 @@ namespace BlogEngine.View
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-            base.OnStartup(e);
 #if DEBUG
             try
             {

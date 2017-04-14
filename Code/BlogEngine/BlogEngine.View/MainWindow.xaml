@@ -18,13 +18,13 @@
                     <RibbonButton LargeImageSource="Image/blogs-icon.png" Label="List" Command="{Binding ListBlogCommand}"></RibbonButton>
                 </RibbonGroup>
                 <RibbonGroup Header="Reportes">
-                    <RibbonButton LargeImageSource="Image/report-icon.png" Label="Registrados" Command="{Binding ReporteBlogCommand}" ></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/report-icon.png" Label="Registrados" Command="{Binding ReportBlogCommand}" ></RibbonButton>
                 </RibbonGroup>
             </RibbonTab>
             <RibbonTab Header="Publicaciones"  >
                 <RibbonGroup Header="Mantenimiento">
-                    <RibbonButton LargeImageSource="Image/blog-post-accept-icon.png" Label="Crear" Command="{Binding CrearPublicacionCommand}" ></RibbonButton>
-                    <RibbonButton LargeImageSource="Image/blog-post-icon.png" Label="Listar" Command="{Binding ListadoPublicacionCommand}" ></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blog-post-accept-icon.png" Label="Create" Command="{Binding CreatePublicationCommand}" ></RibbonButton>
+                    <RibbonButton LargeImageSource="Image/blog-post-icon.png" Label="List" Command="{Binding ListPublicationsCommand}" ></RibbonButton>
                 </RibbonGroup>
             </RibbonTab>
         </Ribbon>
