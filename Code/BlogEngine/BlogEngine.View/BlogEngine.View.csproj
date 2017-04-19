@@ -43,6 +43,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,12 +56,16 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ReporteBlog.xaml.cs">
+      <DependentUpon>ReporteBlog.xaml</DependentUpon>
+    </Compile>
     <Page Include="CreateBlog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +113,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ReporteBlog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\Annotations.cs" />
@@ -154,6 +163,10 @@
     <ProjectReference Include="..\BlogEngine.Common\BlogEngine.Common.csproj">
       <Project>{2A9B0F88-0337-4768-954B-30C1B439B4C3}</Project>
       <Name>BlogEngine.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BlogEngine.Report\BlogEngine.Report.csproj">
+      <Project>{fe83a303-e14f-4bd4-9c2d-a79dd502bb03}</Project>
+      <Name>BlogEngine.Report</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlogEngine.Resource\BlogEngine.Resource.csproj">
       <Project>{610a0162-048c-460b-84c9-18cf192b75f9}</Project>

@@ -92,7 +92,7 @@ namespace BlogEngine.ViewModel
 
         private void OpenReportBlog()
         {
-            Page = "ReportBlog.xaml";
+            Page = "ReporteBlog.xaml";
         }
 
         private void OpenCreatePublication()
